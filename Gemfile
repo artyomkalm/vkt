@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.0"
+
 gem 'rails', '4.2.1'
 gem 'sqlite3'
 gem 'sass-rails'
@@ -14,6 +16,7 @@ gem 'vkontakte_api'
 gem 'omniauth-vkontakte'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'haml-rails'
+gem 'pg', group: :production
 
 
 group :development, :test do
@@ -22,3 +25,4 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
