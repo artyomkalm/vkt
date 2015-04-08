@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    @vk = VkontakteApi::Client.new
   end
 
   # GET /users/1
