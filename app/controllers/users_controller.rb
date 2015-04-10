@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if current_user do
+      @vk = VkontakteApi::Client.new(current_user.token) if current_user
+      @friends = @vk.friends.get(fields: [:uid, :first_name, :screen_name, :last_name])
+    end
   end
 
   # GET /users/1

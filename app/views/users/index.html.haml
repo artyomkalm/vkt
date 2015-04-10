@@ -21,4 +21,11 @@
         %td= user.created_at
         %td
           = link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(user), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
-= current_user.token if current_user
+- if current_user do
+  = current_user.token if current_user
+  = @vk.token if @vk
+  - @friends.each do
+    = friends.first.uid         # => "1"
+    = friends.first.first_name  # => "Павел"
+    = friends.first.screen_name # => "durov"
+    = friends.first.last_name   # => "Дуров"
